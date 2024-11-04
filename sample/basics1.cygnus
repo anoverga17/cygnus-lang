@@ -1,0 +1,15 @@
+func int helper(int a) {
+	if a == 0 || false {
+		12
+	} else {
+		a
+	}
+}
+
+func int main() { 
+	int x = 0 / 12
+	int j = lambda(k, t) { 
+		t + 2*k
+	} 
+	x + j(1, 3) - helper(x)
+}
