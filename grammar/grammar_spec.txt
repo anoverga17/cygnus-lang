@@ -1,0 +1,46 @@
+
+program
+    : func_declaration*
+    ;
+
+func_declaration
+    : 'func' rettype funcname '(' parameters ')' scope
+    ;
+
+scope
+    : '{' let_stmt '}'
+    | '{' expr '}'
+    ;
+
+let_stmt
+    : 'let' rettype varname '=' expr expr
+    | 'let' rettype varname '=' expr let_stmt
+    ;
+
+expr
+    : INT
+    | CHAR
+    | BOOL
+    | -INT
+    | !expr
+    | expr + expr
+    | expr - expr
+    | expr * expr
+    | expr / expr
+    | expr 'and' expr
+    | expr 'or' expr
+    | expr '<' expr
+    | expr '<=' expr
+    | expr '>' expr
+    | expr '>=' expr
+    | expr '==' expr
+    | expr '!=' expr
+    | '(' expr ')'
+    | funcname '(' arguments ')'
+    | varname '(' arguments ')'
+    | varname
+    | parametername
+    | parametername '(' arguments ')'
+    | 'if' expr scope 'else' scope
+    ;
+
