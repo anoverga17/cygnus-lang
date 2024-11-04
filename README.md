@@ -1,1 +1,3 @@
-# cygnus-lang
+# Cygnus Programming Language
+
+Development in Progress
