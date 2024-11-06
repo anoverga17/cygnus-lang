@@ -21,6 +21,7 @@ expr
     : INT
     | CHAR
     | BOOL
+    | clojure
     | -INT
     | !expr
     | expr + expr
@@ -42,5 +43,16 @@ expr
     | parametername
     | parametername '(' arguments ')'
     | 'if' expr scope 'else' scope
+    | 'lambda' '(' parameters  ')' scope
     ;
 
+clojure
+    : rettype '(' vartype ')'
+    ;
+
+
+ID:     [a-zA-Z][a-zA-Z0-9_]* ;
+INT:    [0] | ([1-9][0-9]*) ;
+CHAR:   '\'' . '\'' ;
+WS:     [ \t\r\n]+ -> skip;
+COMMENT: '//' (~[\r\n])* -> skip;
