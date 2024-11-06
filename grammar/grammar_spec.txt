@@ -21,7 +21,6 @@ expr
     : INT
     | CHAR
     | BOOL
-    | clojure
     | -INT
     | !expr
     | expr + expr
@@ -44,6 +43,17 @@ expr
     | parametername '(' arguments ')'
     | 'if' expr scope 'else' scope
     | 'lambda' '(' parameters  ')' scope
+    ;
+
+rettype
+    : vartype
+    ;
+
+vartype
+    : 'int'
+    | 'char'
+    | 'bool'
+    | clojure
     ;
 
 clojure
