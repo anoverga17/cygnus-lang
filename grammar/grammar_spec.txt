@@ -53,11 +53,7 @@ vartype
     : 'int'
     | 'char'
     | 'bool'
-    | clojure
-    ;
-
-clojure
-    : rettype '(' vartype ')'
+    | 'func' rettype
     ;
 
 
