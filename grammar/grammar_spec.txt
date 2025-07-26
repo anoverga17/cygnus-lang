@@ -1,6 +1,7 @@
 
 program
     : func_declaration*
+    | expr
     ;
 
 func_declaration
@@ -13,8 +14,12 @@ scope
     ;
 
 let_stmt
-    : 'let' rettype varname '=' expr expr
-    | 'let' rettype varname '=' expr let_stmt
+    : let_assign expr
+    | let_assign let_stmt
+    ;
+
+let_assign
+    : 'let' rettype varname '=' expr
     ;
 
 expr
